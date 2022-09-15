@@ -1,6 +1,7 @@
 #==========================================================================
 # Description: Build Armbian For Amlogic s9xxx tv box
 # Copyright (C) 2021 https://github.com/ophub/amlogic-s9xxx-armbian
+# Change default password   toor  
 #==========================================================================
 
 name: Rebuild armbian
@@ -126,7 +127,7 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: Rebuild Armbian for Amlogic s9xxx
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: kdd6/amlogic-s9xxx-armbian@main
         if: env.ARMBIAN_URL != '' && !cancelled()
         with:
           build_target: armbian
@@ -150,6 +151,6 @@ jobs:
             This is Armbian image for Amlogic s9xxx tv box
             * Firmware information
             Default username: root
-            Default password: 1234
+            Default password: toor
             Install command: armbian-install
             Update command: armbian-update
